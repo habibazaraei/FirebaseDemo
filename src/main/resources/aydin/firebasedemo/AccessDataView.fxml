@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="aydin.firebasedemo.AccessController"
+      spacing="10" alignment="CENTER" stylesheets="@style.css" styleClass="root">
+
+    <Label text="Persons — Read / Write" styleClass="title"/>
+
+    <GridPane hgap="8" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Name:"  GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" promptText="Full name"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Age:"   GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="ageField"  promptText="e.g., 20"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="phoneField" promptText="(555) 555-5555"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Write" onAction="#handleWrite" styleClass="primary"/>
+        <Button text="Read"  onAction="#handleRead"  styleClass="secondary"/>
+        <Button text="Sign Out" onAction="#handleSignOut"/>
+    </HBox>
+
+    <TextArea fx:id="output" prefRowCount="8" prefWidth="420" editable="false"/>
+</VBox>
